@@ -9,7 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ApiService } from './services/api.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -21,8 +23,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
+    MatTooltipModule,
+    BrowserAnimationsModule,
   ],
   declarations: [MainComponent, LoginComponent],
+  providers: [ApiService],
   bootstrap: [MainComponent],
 })
 export class AppModule {}

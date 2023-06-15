@@ -1,0 +1,20 @@
+mat-form-field {
+  width: 100%;
+}
+
+mat-raised-button {
+  width: 100%;
+}
+
+#login-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-form-container {
+  width: 300px;
+  text-align: center;
+}
