@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApiService } from './services/api.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     CommonModule,
@@ -25,6 +26,7 @@ import { ApiService } from './services/api.service';
     MatFormFieldModule,
     MatTooltipModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   declarations: [MainComponent, LoginComponent],
   providers: [ApiService],
