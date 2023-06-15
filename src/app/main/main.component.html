@@ -1,0 +1,115 @@
+<router-outlet></router-outlet>
+<!-- <h2>Requirements:</h2>
+<ol>
+  <li>
+    You have to create an issue tracking product like Atlassian Jira.
+  </li>
+  <li>
+    It will have a login screen, one landing screen, and one detail screen.
+  </li>
+  <li>
+    For login, you have to implement Auth Guards and use encryption over password.
+    If user enters correct credentials, then only landing module should get loaded lazily
+    otherwise it will stay in same page with an error message.
+  </li>
+  <li>
+    When user comes to landing screen, user should be able to see one search bar on the top of the page
+    to search with Issue IDs to directly go to issue detail screen.
+    All screens will have a header, left navigation and a main container.
+  </li>
+  <li>
+    Header section of the page will have
+    <ol>
+      <li>
+        some logo on top left,
+      </li>
+      <li>
+        Issue search bar in middle and
+      </li>
+      <li>
+        one dropdown to show Create New Sprint and Create new Issue and one logout button on top right side.
+      </li>
+      <li>
+        Create new Sprint, when clicked should display as a popup window, asking for Sprint Title, Start and End Time and whether this is active sprint.
+        There can be only one active sprint.
+      </li>
+      <li>
+        Create new Issue, when clicked should display as a popup window, asking for Issue Title and Sprint name in each that issue has to be added in.
+      </li>
+      <li>
+        Issues can be added only in Sprints or Future Sprints but not the backlog.
+      </li>
+    </ol> 
+  </li>
+  <li>
+    On left navigation section, there should be links to show
+    <ol>
+      <li>
+        All sprints (which will be default page when user logs in.)
+      </li>
+      <li>
+        Issue Graph
+      </li>
+    </ol>
+  </li>
+  <li>
+    On Right container, page will display according to selection made by user from left panel.<br>
+    You can create a dummy JSON data to display records and update that JSON when you create/update any Sprint/Issue.
+  </li>
+  <li>
+    Design specifications for each page is given below:
+    <ol>
+      <li>
+        All Sprints:<br>
+        This page will have two blocks separated by a vertical line.
+        <ol>
+          <li>
+            On Left side of the line,
+            All previous created sprints (along with their issues) upto current sprint will be visible.
+            Sprint box will act as a collapsable block with a Sprint header and an arrow button to expand/collapse that sprint box.
+            And one add button to add new issue for that sprint.
+            In Sprint body, there can be any number of issues which can be dragged dropped in same sprint box or in any other sprint box.
+            Only Issue blocks are able to drap and drop not the Sprint box.
+
+            When user clicks on Sprint Header text, it should navigate to Sprint detail screen to view or edit the details.
+            When user clicks on the Issue ID from any Sprint Box, it should navigate to Issue detail screen to display more details about it.
+            User should be able to update details and change status of the issue and save.
+          </li>
+          <li>
+            On Right side of the line,
+
+            One Backlog Container
+            All issues moved to backlog should be visible inside Backlog container, which will have same design as Sprint Container Box.
+            Issues can be moved from Sprint to Backlog and from Backlog to only Active Sprint.
+            There will be only one Backlog container with maximum height equal to half of the page height and user will not be allowed to add/delete that container.
+      
+            One 'To Be Implemented In Future' Container
+            This container will have issues created for future sprints and issue can be moved from this container only to active sprint.
+            There will be only one 'To Be Implemented In Future' container with maximum height equal to half of the page height and user will not be allowed to add/delete that container.
+          </li>
+        </ol>
+      </li>
+      <li>
+        Issue Graph:<br>
+        This page will show a pie chart/bar graph of issues assigned to current user with below information
+        <ol>
+          <li>
+            All Open Issues with count,
+          </li>
+          <li>
+            All Closed Issues with count,
+          </li>
+          <li>
+            All In Progress Issues with count.
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    Application should be responsive enough to display in both Window and Tab Mode and should handle screen rotation.
+  </li>
+  <li>
+    You can use PrimeNG or Angular Material to implement UI.
+  </li>
+</ol> -->
