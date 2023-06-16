@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 // import { ApiService } from '../../services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   public loginSubscription: Subscription | undefined;
 
   constructor(
-    private fb: FormBuilder // private apiService: ApiService
+    private fb: FormBuilder, // private apiService: ApiService
+    private router: Router
   ) {
     this.loginForm = this.fb.group({
       email: [null, Validators.required],
@@ -29,5 +31,6 @@ export class LoginComponent implements OnInit {
     //   .get('../../mock-data/login.json', [])
     //   .subscribe((res) => console.log(res));
     console.log('login');
+    this.router.navigate(['/home']);
   }
 }
