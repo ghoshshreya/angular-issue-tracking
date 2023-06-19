@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IssueTrackingModule } from './issue-tracking/issue-tracking.module';
 import { UserDetailsService } from './services/userDetails.service';
 import { AuthenticationService } from './services/authentication.service';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   imports: [
     CommonModule,
@@ -32,6 +33,7 @@ import { AuthenticationService } from './services/authentication.service';
     HttpClientModule,
     IssueTrackingModule,
     MatButtonModule,
+    MatSelectModule,
   ],
   declarations: [MainComponent, LoginComponent],
   providers: [ApiService, UserDetailsService, AuthenticationService],

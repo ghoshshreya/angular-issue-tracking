@@ -7,8 +7,14 @@
 
     <app-search placeholder="Search Issues.."></app-search>
 
-    <button mat-raised-button color="primary">Create New Issue</button>
-    <button mat-raised-button color="primary">Create New Sprint</button>
+    <mat-form-field>
+      <mat-label>Create New..</mat-label>
+      <select matNativeControl id="mySelectId">
+        <option value="" disabled selected></option>
+        <option value="issue">Issue</option>
+        <option value="sprint">Sprint</option>
+      </select>
+    </mat-form-field>
 
     <span
       class="material-symbols-outlined"
