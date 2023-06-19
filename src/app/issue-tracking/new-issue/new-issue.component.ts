@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ApiService } from 'src/app/services/api.service';
+import { ApiService } from '../../services/api.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-new-issue',
@@ -26,9 +27,9 @@ export class NewIssueComponent implements OnInit {
   }
 
   getActiveSprints() {
-    this.apiService
-      .get(this.getSprintsUrl, [])
-      .subscribe((res: any) => console.log(res));
+    this.apiService.get(this.getSprintsUrl, []).subscribe((res: any) => {
+      console.log(new Date());
+    });
   }
 
   createNew() {

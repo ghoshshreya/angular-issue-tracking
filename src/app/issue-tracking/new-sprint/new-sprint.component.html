@@ -1,0 +1,29 @@
+<div>
+  <h5>Create New Sprint</h5>
+
+  <form [formGroup]="newSprintForm" (ngSubmit)="createNew()">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Start Date - End Date</mat-label>
+      <textarea
+        matInput
+        placeholder="Enter description.."
+        formControlName="description"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-radio-group aria-label="Active">
+        <mat-radio-button [value]="true">Yes</mat-radio-button>
+        <mat-radio-button [value]="false">No</mat-radio-button>
+      </mat-radio-group>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Create</button>
+    <button type="submit" mat-raised-button color="primary">Cancel</button>
+  </form>
+</div>

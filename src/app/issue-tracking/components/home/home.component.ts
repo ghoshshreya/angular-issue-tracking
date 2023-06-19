@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NewIssueComponent } from '../../new-issue/new-issue.component';
+import { NewSprintComponent } from '../../new-sprint/new-sprint.component';
 
 @Component({
   selector: 'app-home',
@@ -19,9 +20,13 @@ export class HomeComponent implements OnInit {
   ngOnInit() {}
 
   createNew(value: any) {
-    console.log(value);
-
-    let dialogRef = this.dialogRef.open(NewIssueComponent, {
+    let component: any;
+    if (value === 'sprint') {
+      component = NewSprintComponent;
+    } else {
+      component = NewIssueComponent;
+    }
+    let dialogRef = this.dialogRef.open(component, {
       height: '400px',
       width: '600px',
     });

@@ -7,12 +7,13 @@ import { SearchComponent } from './components/search/search.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { UserDetailsService } from '../services/userDetails.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NewIssueComponent } from './new-issue/new-issue.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from '../services/api.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioButton, MatRadioModule } from '@angular/material/radio';
 
 const routes: Routes = [
   {
@@ -43,6 +44,8 @@ const routes: Routes = [
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatRadioModule,
   ],
   declarations: [
     DashboardComponent,
