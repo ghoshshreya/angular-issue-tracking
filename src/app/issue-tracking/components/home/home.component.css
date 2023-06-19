@@ -1,22 +1,25 @@
 #home {
-  background-color: yellow;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
 }
 
 .nav {
-  background-color: green;
   height: 50px;
+  place-content: center start;
+}
+
+.nav h5 {
+  color: #ffffff;
 }
 
 .content-body {
   height: calc(100vh - 50px);
   width: 100%;
+  display: flex;
 }
 
 .left-navigation {
-  background-color: red;
   height: 100%;
   width: 150px;
 }
