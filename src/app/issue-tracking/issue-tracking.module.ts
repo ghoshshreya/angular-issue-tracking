@@ -19,6 +19,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [CommonModule, RouterModule.forChild(routes)],
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, HomeComponent],
+  exports: [DashboardComponent, HomeComponent],
 })
 export class IssueTrackingModule {}

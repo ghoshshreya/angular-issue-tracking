@@ -13,6 +13,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { IssueTrackingModule } from './issue-tracking/issue-tracking.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatTooltipModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    IssueTrackingModule,
   ],
   declarations: [MainComponent, LoginComponent],
   providers: [ApiService],
