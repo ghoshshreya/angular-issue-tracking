@@ -4,7 +4,7 @@
     "outDir": "../out-tsc/app",
     "strictPropertyInitialization": false,
     "strictTemplates": false,
-    "strictInputAccessModifiers": false,
+    "strictNullChecks": false,
     "types": []
   },
   "files": ["main.ts", "polyfills.ts"],
