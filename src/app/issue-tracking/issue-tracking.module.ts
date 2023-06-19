@@ -37,6 +37,5 @@ const routes: Routes = [
   ],
   declarations: [DashboardComponent, HomeComponent, SearchComponent],
   exports: [DashboardComponent, HomeComponent],
-  providers: [UserDetailsService],
 })
 export class IssueTrackingModule {}

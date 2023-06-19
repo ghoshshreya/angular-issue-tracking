@@ -3,6 +3,8 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "strictPropertyInitialization": false,
+    "strictTemplates": false,
+    "strictInputAccessModifiers": false,
     "types": []
   },
   "files": ["main.ts", "polyfills.ts"],

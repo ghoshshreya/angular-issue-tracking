@@ -8,7 +8,7 @@ export class UserDetailsService {
   public _userDetails = {};
 
   set userDetails(userData: any) {
-    sessionStorage.setItem('userName': userData.fullName);
+    sessionStorage.setItem('userName', userData.fullName);
     this._userDetails = this.userDetails;
   }
 

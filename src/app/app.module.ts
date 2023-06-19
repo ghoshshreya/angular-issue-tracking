@@ -15,6 +15,7 @@ import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { IssueTrackingModule } from './issue-tracking/issue-tracking.module';
 import { UserDetailsService } from './services/userDetails.service';
+import { AuthenticationService } from './services/authentication.service';
 @NgModule({
   imports: [
     CommonModule,

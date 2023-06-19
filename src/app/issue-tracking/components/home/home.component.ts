@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDetailsService } from 'src/app/services/userDetails.service';
+// import { UserDetailsService } from 'src/app/services/userDetails.service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +7,11 @@ import { UserDetailsService } from 'src/app/services/userDetails.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private userService: UserDetailsService) {}
+  constructor() {}
 
   ngOnInit() {}
 
   logout() {
-    this.userService.logout();
+    // this.userService.logout();
   }
 }
