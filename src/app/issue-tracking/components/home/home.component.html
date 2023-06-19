@@ -1,7 +1,21 @@
 <div id="home">
   <div class="nav d-flex p-2">
-    <h5 class="pr-2 m-0">Issue Tracker</h5>
-    <input type="search" #searchBox />
+    <h5 class="pr-2 m-0">
+      <span class="material-symbols-outlined"> error_med </span> Issue Tracker
+    </h5>
+
+    <app-search placeholder="Search Issues.."></app-search>
+
+    <button type="button">Create New</button>
+
+    <span
+      class="material-symbols-outlined"
+      [title]="'Log Out'"
+      role="button"
+      (click)="logout()"
+    >
+      <span class="material-symbols-outlined"> input </span>
+    </span>
   </div>
   <div class="content-body">
     <div class="left-navigation">

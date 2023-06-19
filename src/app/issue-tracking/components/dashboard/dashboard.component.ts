@@ -28,26 +28,10 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
   constructor() {}
 
   ngAfterViewInit() {
-    this.search();
+    // this.search();
   }
 
-  private search() {
-    this.searchSubscription = fromEvent(this.searchBox?.nativeElement, 'keyup')
-      .pipe(
-        map((event) => this.searchBox?.nativeElement.value),
-        filter((data) => data.length > 2), // search only when input text length is greater than 2
-        debounceTime(1000) // wait for 1 sec before firing the request
-      )
-      .subscribe((val) => {
-        
-      });
-  }
-
-  private getSearchData() {
-    
-  }
-
-
+  
 
   ngOnDestroy() {
     this.searchSubscription?.unsubscribe();

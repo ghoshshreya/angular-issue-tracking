@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { SearchComponent } from './components/search/search.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { UserDetailsService } from '../services/userDetails.service';
 
 const routes: Routes = [
   {
@@ -23,8 +28,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes)],
-  declarations: [DashboardComponent, HomeComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+  ],
+  declarations: [DashboardComponent, HomeComponent, SearchComponent],
   exports: [DashboardComponent, HomeComponent],
+  providers: [UserDetailsService],
 })
 export class IssueTrackingModule {}

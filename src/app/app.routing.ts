@@ -11,7 +11,7 @@ const routes: Routes = [
       import('./issue-tracking/issue-tracking.module').then(
         (m) => m.IssueTrackingModule
       ),
-  },
+  }, 
 ];
 
 @NgModule({

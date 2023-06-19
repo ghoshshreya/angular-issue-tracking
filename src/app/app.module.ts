@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { IssueTrackingModule } from './issue-tracking/issue-tracking.module';
+import { UserDetailsService } from './services/userDetails.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -31,7 +32,7 @@ import { IssueTrackingModule } from './issue-tracking/issue-tracking.module';
     IssueTrackingModule,
   ],
   declarations: [MainComponent, LoginComponent],
-  providers: [ApiService],
+  providers: [ApiService, UserDetailsService],
   bootstrap: [MainComponent],
 })
 export class AppModule {}

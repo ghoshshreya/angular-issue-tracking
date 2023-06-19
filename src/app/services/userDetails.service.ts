@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable()
-export class UserDetails {
-  constructor() {}
+export class UserDetailsService {
+  constructor(private router: Router) {}
 
   public _userDetails = {};
 
@@ -13,5 +13,10 @@ export class UserDetails {
 
   get userDetails() {
     return this._userDetails;
+  }
+
+  public logout() {
+    this.userDetails = null;
+    this.router.navigate(['/login'], { queryParams: { isLoggedOut: 'true' } });
   }
 }
