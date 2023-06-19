@@ -8,4 +8,8 @@ export class ApiService {
   get(url: string, params: any) {
     return this.http.get(url, { params });
   }
+
+  post(url: string, data: any) {
+    return this.http.post(url, data);
+  }
 }

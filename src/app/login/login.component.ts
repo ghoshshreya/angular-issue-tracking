@@ -5,7 +5,6 @@ import { ApiService } from '../services/api.service';
 import { Router } from '@angular/router';
 import { UserDetailsService } from '../services/userDetails.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { UrlConfig } from '../constants/urlsConfig.constant';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +14,8 @@ import { UrlConfig } from '../constants/urlsConfig.constant';
 export class LoginComponent implements OnInit, OnDestroy {
   public hide = true;
   public loginForm: FormGroup;
+  public loginUrl =
+    'https://my-json-server.typicode.com/ghoshshreya/mockjson/userDetails';
   public loginSubscription: Subscription | undefined;
 
   constructor(
@@ -34,29 +35,27 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   login() {
     if (this.loginForm.valid) {
-      this.loginSubscription = this.apiService
-        .get(UrlConfig.loginUrl, [])
-        .subscribe(
-          (res: any) => {
-            // dummy check for email, ideally check will be done against both email and password in the backend
-            if (
-              res?.isValid &&
-              res?.email === 'john.doe@example.com' &&
-              this.loginForm.get('password')?.value === 'test@123'
-            ) {
-              this.userService.userDetails = res;
-            } else {
-              this._snackBar.open('Incorrect email/password', 'Error');
-            }
-          },
-          (error) => {
-            console.error('Here');
-            this._snackBar.open(
-              'An unexpected error occurred! Please try again later',
-              'Error'
-            );
+      this.loginSubscription = this.apiService.get(this.loginUrl, []).subscribe(
+        (res: any) => {
+          // dummy check for email, ideally check will be done against both email and password in the backend
+          if (
+            res?.isValid &&
+            res?.email === 'john.doe@example.com' &&
+            this.loginForm.get('password')?.value === 'test@123'
+          ) {
+            this.userService.userDetails = res;
+          } else {
+            this._snackBar.open('Incorrect email/password', 'Error');
           }
-        );
+        },
+        (error) => {
+          console.error('Here');
+          this._snackBar.open(
+            'An unexpected error occurred! Please try again later',
+            'Error'
+          );
+        }
+      );
       this.router.navigate(['/home']);
     } else {
       this._snackBar.open('Please enter username and password', 'Error');

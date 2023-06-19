@@ -9,6 +9,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { UserDetailsService } from '../services/userDetails.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NewIssueComponent } from './new-issue/new-issue.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ApiService } from '../services/api.service';
 
 const routes: Routes = [
   {
@@ -36,8 +40,17 @@ const routes: Routes = [
     MatInputModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  declarations: [DashboardComponent, HomeComponent, SearchComponent],
+  declarations: [
+    DashboardComponent,
+    HomeComponent,
+    SearchComponent,
+    NewIssueComponent,
+  ],
   exports: [DashboardComponent, HomeComponent],
+  providers: [ApiService],
 })
 export class IssueTrackingModule {}

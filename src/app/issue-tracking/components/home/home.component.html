@@ -9,11 +9,10 @@
 
     <mat-form-field>
       <mat-label>Create New..</mat-label>
-      <select matNativeControl id="mySelectId">
-        <option value="" disabled selected></option>
-        <option value="issue">Issue</option>
-        <option value="sprint">Sprint</option>
-      </select>
+      <mat-select (selectionChange)="createNew($event.value)">
+        <mat-option value="sprint">Sprint</mat-option>
+        <mat-option value="issue">Issue</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <span

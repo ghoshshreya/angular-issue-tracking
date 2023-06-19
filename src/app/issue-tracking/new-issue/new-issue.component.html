@@ -1,0 +1,29 @@
+<div>
+  <h5>Create New Issue</h5>
+  <form [formGroup]="newIssueForm" (ngSubmit)="createNew()">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput type="text" formControlName="title" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        placeholder="Enter description.."
+        formControlName="description"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Sprint..</mat-label>
+      <mat-select
+        (selectionChange)="newIssueForm.get('sprint')?.patchValue($event.value)"
+      >
+        <mat-option value="'Sprint_23_21'">Sprint_23_21</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Create</button>
+  </form>
+</div>

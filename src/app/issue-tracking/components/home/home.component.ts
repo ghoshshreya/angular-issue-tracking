@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { UserDetailsService } from 'src/app/services/userDetails.service';
+import { MatDialog } from '@angular/material/dialog';
+import { NewIssueComponent } from '../../new-issue/new-issue.component';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +10,22 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   public navLinks = [
     {
-      "title": "Home",
-      "link": "/home"
-    }
-  ]
-  constructor() {}
+      title: 'Home',
+      link: '/home',
+    },
+  ];
+  constructor(public dialogRef: MatDialog) {}
 
   ngOnInit() {}
+
+  createNew(value: any) {
+    console.log(value);
+
+    let dialogRef = this.dialogRef.open(NewIssueComponent, {
+      height: '400px',
+      width: '600px',
+    });
+  }
 
   logout() {
     // this.userService.logout();
