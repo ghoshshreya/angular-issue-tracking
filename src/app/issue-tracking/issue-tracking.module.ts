@@ -14,6 +14,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioButton, MatRadioModule } from '@angular/material/radio';
+import { NewSprintComponent } from './new-sprint/new-sprint.component';
+import {
+  MatDatepickerModule,
+  MatDateRangeInput,
+} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const routes: Routes = [
   {
@@ -46,12 +52,15 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatButtonModule,
     MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   declarations: [
     DashboardComponent,
     HomeComponent,
     SearchComponent,
     NewIssueComponent,
+    NewSprintComponent,
   ],
   exports: [DashboardComponent, HomeComponent],
   providers: [ApiService],
