@@ -8,6 +8,7 @@ export class UserDetailsService {
   public _userDetails = {};
 
   set userDetails(userData: any) {
+    sessionStorage.setItem('userName': userData.fullName);
     this._userDetails = this.userDetails;
   }
 
@@ -17,6 +18,7 @@ export class UserDetailsService {
 
   public logout() {
     this.userDetails = null;
+    sessionStorage.removeItem('userName');
     this.router.navigate(['/login'], { queryParams: { isLoggedOut: 'true' } });
   }
 }

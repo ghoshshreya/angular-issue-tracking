@@ -32,7 +32,7 @@ import { UserDetailsService } from './services/userDetails.service';
     IssueTrackingModule,
   ],
   declarations: [MainComponent, LoginComponent],
-  providers: [ApiService, UserDetailsService],
+  providers: [ApiService, UserDetailsService, AuthenticationService],
   bootstrap: [MainComponent],
 })
 export class AppModule {}
