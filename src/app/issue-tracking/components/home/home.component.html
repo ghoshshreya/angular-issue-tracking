@@ -1,12 +1,14 @@
 <div id="home">
   <div class="nav d-flex p-2">
-    <h5 class="pr-2 m-0">
-      <span class="material-symbols-outlined"> error_med </span> Issue Tracker
-    </h5>
+    <div class="pr-2 d-flex">
+      <span class="material-symbols-outlined"> error_med </span>
+      <span class="hidden-md-down">Issue Tracker</span>
+    </div>
 
     <app-search placeholder="Search Issues.."></app-search>
 
-    <button type="button">Create New</button>
+    <button mat-raised-button color="primary">Create New Issue</button>
+    <button mat-raised-button color="primary">Create New Sprint</button>
 
     <span
       class="material-symbols-outlined"
@@ -19,10 +21,7 @@
   </div>
   <div class="content-body">
     <div class="left-navigation">
-      <ul>
-        <li>Home</li>
-        <li>Dashboard</li>
-      </ul>
+      <div><a [routerLink]="'/home'">Home</a></div>
     </div>
 
     <div class="content-container">

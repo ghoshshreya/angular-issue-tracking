@@ -1,0 +1,13 @@
+#search-box {
+  min-width: 300px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(210, 210, 210);
+  display: flex;
+  justify-content: space-between;
+}
+
+#search-box input {
+  border: 0;
+  outline: none;
+  width: 90;
+}

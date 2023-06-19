@@ -31,6 +31,7 @@ import { AuthenticationService } from './services/authentication.service';
     BrowserAnimationsModule,
     HttpClientModule,
     IssueTrackingModule,
+    MatButtonModule,
   ],
   declarations: [MainComponent, LoginComponent],
   providers: [ApiService, UserDetailsService, AuthenticationService],

@@ -1,28 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ApiService } from '../services/api.service';
 import { Router } from '@angular/router';
 import { UserDetailsService } from '../services/userDetails.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { UrlConfig } from '../constants/urlsConfig.constant';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   public hide = true;
   public loginForm: FormGroup;
   public loginSubscription: Subscription | undefined;
-
-  public loginUrl =
-    'https://my-json-server.typicode.com/ghoshshreya/mockjson/posts';
 
   constructor(
     private fb: FormBuilder,
     private apiService: ApiService,
     private router: Router,
-    private userService: UserDetailsService
+    private userService: UserDetailsService,
+    private _snackBar: MatSnackBar
   ) {
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
@@ -35,19 +35,35 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.loginForm.valid) {
       this.loginSubscription = this.apiService
-        .get(this.loginUrl, [])
-        .subscribe((res: any) => {
-          // dummy check for email, ideally check will be done against both email and password in the backend
-          if (
-            res?.userDetails?.isValid &&
-            res?.userDetails?.email === 'john.doe@example.com' &&
-            this.loginForm.get('password').value === 'test@123'
-          ) {
-            this.userService.userDetails(res.userDetails);
-          } else {
+        .get(UrlConfig.loginUrl, [])
+        .subscribe(
+          (res: any) => {
+            // dummy check for email, ideally check will be done against both email and password in the backend
+            if (
+              res?.isValid &&
+              res?.email === 'john.doe@example.com' &&
+              this.loginForm.get('password')?.value === 'test@123'
+            ) {
+              this.userService.userDetails = res;
+            } else {
+              this._snackBar.open('Incorrect email/password', 'Error');
+            }
+          },
+          (error) => {
+            console.error('Here');
+            this._snackBar.open(
+              'An unexpected error occurred! Please try again later',
+              'Error'
+            );
           }
-        });
+        );
       this.router.navigate(['/home']);
+    } else {
+      this._snackBar.open('Please enter username and password', 'Error');
     }
+  }
+
+  ngOnDestroy() {
+    this.loginSubscription?.unsubscribe();
   }
 }
